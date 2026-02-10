@@ -1,3 +1,0 @@
-module.exports=[84883,a=>{a.v({className:"dm_sans_efc253b3-module__w1i8Da__className",variable:"dm_sans_efc253b3-module__w1i8Da__variable"})},90599,a=>{"use strict";var b=a.i(99680),c=a.i(84883);let d={className:c.default.className,style:{fontFamily:"'DM Sans', 'DM Sans Fallback'",fontStyle:"normal"}};function e({children:a}){return(0,b.jsx)("html",{lang:"en",className:d.variable,children:(0,b.jsx)("body",{className:`${d.className} antialiased`,children:a})})}null!=c.default.variable&&(d.variable=c.default.variable),a.s(["default",()=>e,"metadata",0,{title:"2FLY Marketing - Proposals",description:"Interactive marketing proposals by 2FLY Marketing Agency"}],90599)}];
-
-//# sourceMappingURL=%5Broot-of-the-server%5D__373ce25d._.js.map
