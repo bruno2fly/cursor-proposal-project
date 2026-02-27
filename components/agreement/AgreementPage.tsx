@@ -300,19 +300,35 @@ export default function AgreementPage({
             <h2 className="font-clash text-xl font-semibold text-white mb-4">
               Fees & Payment
             </h2>
-            <div className="p-5 rounded-xl bg-gradient-to-br from-accent-purple/10 to-accent-pink/10 border border-accent-purple/20 mb-4">
-              <p className="font-clash text-2xl font-bold text-white">
-                {formattedFee} USD <span className="text-[#d4d4d8] font-normal text-lg">/ month</span>
-              </p>
-            </div>
-            <div className="space-y-3 text-[#d4d4d8] leading-relaxed">
-              <p>
-                Advertising spend is not included and is paid directly to
-                platforms (Google, Meta, etc.) using your payment methods.
-              </p>
-              <p>Month 1 is invoiced upon signing and must be paid before work starts.</p>
-              <p>Months 2 and 3 are invoiced in advance on the same date each month.</p>
-              <p>Payments are non‑refundable once a month&apos;s work has begun.</p>
+            <div className="space-y-4 mb-4">
+              <div className="p-5 rounded-xl bg-gradient-to-br from-accent-purple/10 to-accent-pink/10 border border-accent-purple/20">
+                <p className="text-accent-purple text-xs font-medium uppercase tracking-wider mb-1">
+                  Monthly Marketing Package
+                </p>
+                <p className="font-clash text-2xl font-bold text-white">
+                  {formattedFee} USD <span className="text-[#d4d4d8] font-normal text-lg">/ month</span>
+                </p>
+                <p className="text-[#d4d4d8] text-sm mt-2">
+                  Includes maintenance, upgrades, and all marketing services.
+                </p>
+                <div className="mt-4 pt-4 border-t border-accent-purple/20 space-y-2 text-[#d4d4d8] text-sm">
+                  <p>Advertising spend is not included and is paid directly to platforms (Google, Meta, etc.) using your payment methods.</p>
+                  <p>Month 1 is invoiced upon signing and must be paid before work starts.</p>
+                  <p>Months 2 and 3 are invoiced in advance on the same date each month.</p>
+                  <p>Payments are non‑refundable once a month&apos;s work has begun.</p>
+                </div>
+              </div>
+              <div className="p-5 rounded-xl border border-dark-border bg-dark-bg/50">
+                <p className="text-accent-pink text-xs font-medium uppercase tracking-wider mb-1">
+                  Website Creation
+                </p>
+                <p className="font-clash text-2xl font-bold text-white">
+                  1,300 USD <span className="text-[#d4d4d8] font-normal text-lg">one-time</span>
+                </p>
+                <p className="text-[#d4d4d8] text-sm mt-2">
+                  Full responsive website design, SEO setup, and all foundational elements to get your site live and performing. This is a one-time payment only — maintenance and upgrades are included in the Monthly Marketing Package above.
+                </p>
+              </div>
             </div>
           </SectionCard>
 
