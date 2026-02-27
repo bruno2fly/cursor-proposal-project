@@ -596,13 +596,7 @@ export default function AgreementPage({
             viewport={{ once: true }}
             className="pt-8 text-center"
           >
-            <a
-              href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-[#d4d4d8] hover:bg-white/5 hover:text-white transition-colors text-sm font-medium"
-            >
-              ← Back to 2FLY
-            </a>
-            <p className="text-dark-text text-sm mt-4">
+            <p className="text-dark-text text-sm">
               For questions, contact 2FLY Agency.
             </p>
           </motion.footer>
