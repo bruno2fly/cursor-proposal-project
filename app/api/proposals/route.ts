@@ -8,7 +8,10 @@ export async function GET() {
 
   const { data, error } = await supabase
     .from("proposals")
-    .select("*")
+    .select(`
+      *,
+      proposal_events (event_type, created_at)
+    `)
     .order("created_at", { ascending: false });
 
   if (error) {

@@ -47,11 +47,15 @@ export interface ServiceDetail {
 export interface ProposalEvent {
   id: string;
   proposal_id: string;
-  event_type: "viewed" | "accepted" | "declined" | "service_clicked" | "pricing_viewed";
+  event_type: "viewed" | "accepted" | "declined" | "service_clicked" | "pricing_viewed" | "agreement_accepted";
   metadata: Record<string, unknown> | null;
   created_at: string;
   ip_address: string | null;
   user_agent: string | null;
+}
+
+export interface ProposalWithEvents extends Proposal {
+  proposal_events?: { event_type: string; created_at: string }[];
 }
 
 export interface ProposalWithServices extends Proposal {
