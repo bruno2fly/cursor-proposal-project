@@ -20,9 +20,16 @@ interface OnboardingItem {
   status: string;
 }
 
+interface VisualIdItem {
+  id: string;
+  slug: string;
+  status: string;
+}
+
 export default function ProposalList() {
   const [proposals, setProposals] = useState<ProposalWithEvents[]>([]);
   const [onboardingData, setOnboardingData] = useState<Record<string, OnboardingItem>>({});
+  const [visualIdData, setVisualIdData] = useState<Record<string, VisualIdItem>>({});
   const [loading, setLoading] = useState(true);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -45,16 +52,29 @@ export default function ProposalList() {
         setOnboardingData(map);
       })
       .catch(() => {});
+
+    fetch("/api/onboarding-visual-id")
+      .then((res) => res.json())
+      .then((data) => {
+        const map: Record<string, VisualIdItem> = {};
+        (Array.isArray(data) ? data : []).forEach((item: VisualIdItem) => {
+          map[item.slug] = item;
+        });
+        setVisualIdData(map);
+      })
+      .catch(() => {});
   }, []);
 
-  const handleCopyLink = (slug: string, id: string, mode: "proposal" | "agreement" | "onboarding") => {
+  const handleCopyLink = (slug: string, id: string, mode: "proposal" | "agreement" | "onboarding" | "visual-id") => {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
     const path =
       mode === "agreement"
         ? `/agreement/${slug}`
         : mode === "onboarding"
           ? `/onboarding/${slug}`
-          : `/proposal/${slug}`;
+          : mode === "visual-id"
+            ? `/onboarding-visual-id/${slug}`
+            : `/proposal/${slug}`;
     navigator.clipboard.writeText(`${siteUrl}${path}`);
     setCopiedId(`${id}-${mode}`);
     setTimeout(() => setCopiedId(null), 2000);
@@ -157,6 +177,13 @@ export default function ProposalList() {
                     ) : (
                       <span className="text-dark-text">Onboarding Pending</span>
                     )}
+                    {visualIdData[proposal.slug] ? (
+                      <span className="text-accent-pink">
+                        Visual ID {visualIdData[proposal.slug].status === "reviewed" ? "Reviewed" : "Completed"}
+                      </span>
+                    ) : (
+                      <span className="text-dark-text">Visual ID Pending</span>
+                    )}
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
@@ -166,6 +193,9 @@ export default function ProposalList() {
                   <button onClick={() => handleCopyLink(proposal.slug, proposal.id, "onboarding")} className="px-3 py-1.5 rounded-lg border border-accent-purple/50 text-xs text-accent-purple hover:bg-accent-purple/10 transition-colors">
                     {copiedId === `${proposal.id}-onboarding` ? "Copied!" : "Copy Onboarding Link"}
                   </button>
+                  <button onClick={() => handleCopyLink(proposal.slug, proposal.id, "visual-id")} className="px-3 py-1.5 rounded-lg border border-accent-pink/50 text-xs text-accent-pink hover:bg-accent-pink/10 transition-colors">
+                    {copiedId === `${proposal.id}-visual-id` ? "Copied!" : "Copy Visual ID Link"}
+                  </button>
                   <Link href={`/agreement/${proposal.slug}`} className="px-3 py-1.5 rounded-lg border border-accent-green/30 text-xs text-accent-green hover:bg-accent-green/10 transition-colors">View Agreement</Link>
                   {onboardingData[proposal.slug] && (
                     <Link
@@ -173,6 +203,14 @@ export default function ProposalList() {
                       className="px-3 py-1.5 rounded-lg border border-accent-blue/30 text-xs text-accent-blue hover:bg-accent-blue/10 transition-colors"
                     >
                       View Onboarding
+                    </Link>
+                  )}
+                  {visualIdData[proposal.slug] && (
+                    <Link
+                      href={`/admin/onboarding-visual-id/${visualIdData[proposal.slug].id}`}
+                      className="px-3 py-1.5 rounded-lg border border-accent-pink/30 text-xs text-accent-pink hover:bg-accent-pink/10 transition-colors"
+                    >
+                      View Visual ID
                     </Link>
                   )}
                   <button onClick={() => handleDelete(proposal.id)} className="px-3 py-1.5 rounded-lg border border-red-500/20 text-xs text-red-400 hover:bg-red-500/10 transition-colors">Delete</button>
