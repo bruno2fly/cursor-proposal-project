@@ -128,9 +128,9 @@ export default function AdminLayout({
               2<span className="gradient-text">FLY</span>
             </span>
             <span className="text-dark-text text-sm">Admin</span>
+            <ThemeToggle />
           </div>
           <div className="flex items-center gap-4">
-            <ThemeToggle />
             <span className="text-dark-text text-sm">{user.email}</span>
             <button
               onClick={handleLogout}
