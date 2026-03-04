@@ -55,6 +55,7 @@ export async function POST(request: NextRequest) {
       client_logo_url: body.client_logo_url || null,
       slug: body.slug,
       status: body.status || "draft",
+      accepted_at: body.status === "accepted" ? (body.accepted_at || new Date().toISOString()) : null,
       hero_title: body.hero_title || "360° Marketing Service",
       hero_subtitle: body.hero_subtitle || null,
       pricing_option_1_name: body.pricing_option_1_name || "3-Month Agreement",

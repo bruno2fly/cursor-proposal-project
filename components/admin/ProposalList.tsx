@@ -142,14 +142,14 @@ export default function ProposalList() {
 
       <section>
         <div className="flex items-center gap-3 mb-4">
-          <h2 className="font-clash text-2xl font-bold">Agreements</h2>
+          <h2 className="font-clash text-2xl font-bold">Agreement/Clients</h2>
           {acceptedProposals.length > 0 && (
             <span className="px-2.5 py-0.5 rounded-full bg-accent-green/15 text-accent-green text-xs font-medium">{acceptedProposals.length}</span>
           )}
         </div>
         {acceptedProposals.length === 0 ? (
           <div className="text-center py-10 rounded-xl border border-dark-border bg-dark-card/30">
-            <p className="text-dark-text text-sm">No agreements yet. Accepted proposals will appear here.</p>
+            <p className="text-dark-text text-sm">No agreements yet. Accepted proposals and onboarding clients will appear here.</p>
           </div>
         ) : (
           <div className="space-y-4">
