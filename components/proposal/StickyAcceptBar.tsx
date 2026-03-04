@@ -43,7 +43,7 @@ export default function StickyAcceptBar({
         >
           <div className="pointer-events-auto mx-auto max-w-lg px-4 pb-4 sm:pb-5">
             <div className="flex items-center justify-between gap-3 px-5 py-3 rounded-2xl border border-dark-border bg-dark-card/95 backdrop-blur-md shadow-2xl shadow-black/40">
-              <span className="text-sm sm:text-base text-[#d4d4d8] hidden sm:block">
+              <span className="text-sm sm:text-base text-dark-text-light hidden sm:block">
                 Ready to get started?
               </span>
               <button

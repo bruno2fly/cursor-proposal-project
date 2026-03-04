@@ -46,7 +46,7 @@ export default function StatsSection({ serviceCount }: StatsSectionProps) {
                   suffix={stat.suffix}
                 />
               </div>
-              <div className="text-sm sm:text-base text-[#d4d4d8] font-medium">{stat.label}</div>
+              <div className="text-sm sm:text-base text-dark-text-light font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </div>

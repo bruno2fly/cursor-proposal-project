@@ -4,10 +4,10 @@
   --color-dark-bg: #0A0A0F;
   --color-dark-card: #12121A;
   --color-dark-border: #1E1E2E;
-  --color-dark-text: #8B8B9E;
-  --color-dark-text-light: #B4B4C7;
+  --color-dark-text: #A1A1B5;
+  --color-dark-text-light: #E2E2ED;
   --color-text-primary: #ffffff;
-  --color-text-muted: #d4d4d8;
+  --color-text-muted: #D4D4DC;
   --color-accent-pink: #FF4D6A;
   --color-accent-purple: #6C5CE7;
   --color-accent-green: #00B894;
@@ -19,10 +19,10 @@
   --color-dark-bg: #f8fafc;
   --color-dark-card: #ffffff;
   --color-dark-border: #e2e8f0;
-  --color-dark-text: #64748b;
-  --color-dark-text-light: #475569;
+  --color-dark-text: #475569;
+  --color-dark-text-light: #1e293b;
   --color-text-primary: #0f172a;
-  --color-text-muted: #64748b;
+  --color-text-muted: #334155;
 }
 
 @font-face {
@@ -45,12 +45,8 @@ body {
   color: var(--color-text-primary);
 }
 
-/* Light mode: headings and primary text on light backgrounds */
-.light h1,
-.light h2,
-.light h3,
-.light h4,
-.light .font-clash {
+/* Headings use primary text color (white in dark, dark in light) */
+h1, h2, h3, h4, .font-clash {
   color: var(--color-text-primary);
 }
 

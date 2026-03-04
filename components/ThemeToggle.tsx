@@ -11,7 +11,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-dark-border bg-dark-card">
+      <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-accent-purple/50 bg-accent-purple/15">
         <span className="text-dark-text text-sm">Theme</span>
       </div>
     );
@@ -23,7 +23,7 @@ export default function ThemeToggle() {
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="flex items-center gap-2 px-3 py-2 rounded-lg border border-dark-border bg-dark-card hover:bg-dark-border/50 transition-colors"
+      className="flex items-center gap-2 px-3 py-2 rounded-lg border border-accent-purple/50 bg-accent-purple/15 hover:bg-accent-purple/25 transition-colors"
     >
       {isDark ? (
         <>
@@ -43,7 +43,7 @@ export default function ThemeToggle() {
       ) : (
         <>
           <svg
-            className="w-5 h-5 text-indigo-600 shrink-0"
+            className="w-5 h-5 text-accent-purple shrink-0"
             fill="currentColor"
             viewBox="0 0 20 20"
           >

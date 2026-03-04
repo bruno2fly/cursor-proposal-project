@@ -36,7 +36,7 @@ export default function ServiceDetail({
               <div className="text-4xl">{icon}</div>
               <div>
                 <h3 className="font-clash text-2xl font-bold">{title}</h3>
-                <p className="text-sm sm:text-base text-[#d4d4d8] mt-1 leading-relaxed">{summary}</p>
+                <p className="text-sm sm:text-base text-dark-text-light mt-1 leading-relaxed">{summary}</p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -54,7 +54,7 @@ export default function ServiceDetail({
                   />
                   <div>
                     <div className="text-sm font-medium text-white">{detail.label}</div>
-                    <div className="text-sm sm:text-base text-[#d4d4d8] mt-0.5 leading-relaxed">
+                    <div className="text-sm sm:text-base text-dark-text-light mt-0.5 leading-relaxed">
                       {detail.desc}
                     </div>
                   </div>

@@ -41,9 +41,9 @@ export default function ServiceCard({
       <div className="text-3xl mb-4">{icon}</div>
       <h3 className="font-clash text-lg font-semibold mb-1">{title}</h3>
       {subtitle && (
-        <p className="text-sm text-[#d4d4d8] mb-2">{subtitle}</p>
+        <p className="text-sm text-dark-text-light mb-2">{subtitle}</p>
       )}
-      <p className="text-sm sm:text-base text-[#d4d4d8] leading-relaxed line-clamp-3">
+      <p className="text-sm sm:text-base text-dark-text-light leading-relaxed line-clamp-3">
         {summary}
       </p>
       <div

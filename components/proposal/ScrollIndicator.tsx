@@ -23,7 +23,7 @@ export default function ScrollIndicator() {
           exit={{ opacity: 0 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-sm text-[#d4d4d8] uppercase tracking-widest">
+          <span className="text-sm text-dark-text-light uppercase tracking-widest">
             Scroll to explore
           </span>
           <div className="scroll-indicator">

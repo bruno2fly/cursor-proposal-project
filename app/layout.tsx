@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={dmSans.variable} suppressHydrationWarning>
-      <body className={`${dmSans.className} antialiased`}>
+      <body className={`${dmSans.className} antialiased`} suppressHydrationWarning>
         <ThemeProvider>
           {children}
           <ThemeToggleFloating />

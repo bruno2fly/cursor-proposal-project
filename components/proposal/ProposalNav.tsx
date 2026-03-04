@@ -37,7 +37,7 @@ export default function ProposalNav({ status }: ProposalNavProps) {
               isAccepted ? "bg-accent-green" : "bg-accent-green animate-pulse"
             }`}
           />
-          <span className="text-sm sm:text-base text-[#d4d4d8]">
+          <span className="text-sm sm:text-base text-dark-text-light">
             {isAccepted ? "Proposal Accepted" : "Proposal Active"}
           </span>
           {isAccepted && <span className="text-accent-green ml-1">✓</span>}

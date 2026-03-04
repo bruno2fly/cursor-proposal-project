@@ -51,7 +51,7 @@ export default function NextSteps() {
           <h3 className="font-clash text-xl font-semibold mb-1">
             What Happens Next
           </h3>
-          <p className="text-sm sm:text-base text-[#d4d4d8] mb-6">
+          <p className="text-sm sm:text-base text-dark-text-light mb-6">
             From acceptance to launch in under a week.
           </p>
 
@@ -75,14 +75,14 @@ export default function NextSteps() {
                     <div className="hidden sm:block absolute left-full top-1/2 w-full h-px bg-dark-border -translate-y-1/2" />
                   )}
                 </div>
-                <span className="text-sm sm:text-base text-[#d4d4d8] leading-snug sm:mt-1">
+                <span className="text-sm sm:text-base text-dark-text-light leading-snug sm:mt-1">
                   {step.text}
                 </span>
               </motion.div>
             ))}
           </div>
 
-          <p className="text-sm sm:text-base text-[#d4d4d8] mt-8 text-center border-t border-dark-border pt-5">
+          <p className="text-sm sm:text-base text-dark-text-light mt-8 text-center border-t border-dark-border pt-5">
             You won&apos;t be left waiting. We move fast so you see progress, not promises.
           </p>
         </motion.div>

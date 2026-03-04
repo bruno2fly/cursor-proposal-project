@@ -145,12 +145,12 @@ export default function ProposalPageClient({ proposal }: ProposalPageProps) {
               <div className="font-clash text-lg font-bold">
                 2<span className="gradient-text">FLY</span>
               </div>
-              <p className="text-sm sm:text-base text-[#d4d4d8] text-center sm:text-right max-w-md leading-relaxed">
+              <p className="text-sm sm:text-base text-dark-text-light text-center sm:text-right max-w-md leading-relaxed">
                 2FLY is a performance marketing agency helping local businesses grow through
                 data-driven strategy, paid media, and creative execution.
               </p>
             </div>
-            <p className="text-sm text-[#d4d4d8]/80 text-center mt-6">
+            <p className="text-sm text-dark-text-light/80 text-center mt-6">
               &copy; {new Date().getFullYear()} 2FLY Agency. All rights reserved.
             </p>
           </div>
@@ -184,7 +184,7 @@ export default function ProposalPageClient({ proposal }: ProposalPageProps) {
               <h3 className="font-clash text-2xl font-bold mb-2">
                 Accept Proposal?
               </h3>
-              <p className="text-sm sm:text-base text-[#d4d4d8] mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-dark-text-light mb-6 leading-relaxed">
                 By accepting this proposal, you confirm your interest in
                 partnering with 2FLY Marketing. Our team will reach out within
                 48 hours to finalize the details and get started.
@@ -276,7 +276,7 @@ export default function ProposalPageClient({ proposal }: ProposalPageProps) {
               <h3 className="font-clash text-2xl sm:text-3xl font-bold text-white mb-3 relative">
                 Proposal Accepted!
               </h3>
-              <p className="text-sm sm:text-base text-[#d4d4d8] leading-relaxed mb-8 max-w-sm mx-auto relative">
+              <p className="text-sm sm:text-base text-dark-text-light leading-relaxed mb-8 max-w-sm mx-auto relative">
                 Thank you for choosing 2FLY Marketing. You just made the best decision to start growing your business — we&apos;re excited to get started and drive real results with you.
               </p>
 

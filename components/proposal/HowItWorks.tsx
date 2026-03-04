@@ -118,7 +118,7 @@ export default function HowItWorks() {
                   <h3 className="font-clash text-lg font-semibold mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-[#d4d4d8] leading-relaxed mb-4 max-w-[240px]">
+                  <p className="text-sm sm:text-base text-dark-text-light leading-relaxed mb-4 max-w-[240px]">
                     {step.description}
                   </p>
 
@@ -127,7 +127,7 @@ export default function HowItWorks() {
                     {step.includes.map((item) => (
                       <li
                         key={item}
-                        className="text-sm sm:text-base text-[#d4d4d8]/90 flex items-center gap-1.5 justify-center"
+                        className="text-sm sm:text-base text-dark-text-light/90 flex items-center gap-1.5 justify-center"
                       >
                         <span
                           className="w-1 h-1 rounded-full shrink-0"
@@ -188,7 +188,7 @@ export default function HowItWorks() {
                   <h3 className="font-clash text-lg font-semibold mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-[#d4d4d8] leading-relaxed">
+                  <p className="text-sm sm:text-base text-dark-text-light leading-relaxed">
                     {step.description}
                   </p>
                 </motion.div>
@@ -203,7 +203,7 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-sm sm:text-base text-[#d4d4d8] text-center mt-14 border-t border-dark-border pt-8"
+          className="text-sm sm:text-base text-dark-text-light text-center mt-14 border-t border-dark-border pt-8"
         >
           You&apos;ll always know what&apos;s happening and what&apos;s next.
         </motion.p>

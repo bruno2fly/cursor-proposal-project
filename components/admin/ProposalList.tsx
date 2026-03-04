@@ -14,8 +14,15 @@ function getAgreementStatus(proposal: ProposalWithEvents) {
   return { status: "proposal_accepted" as const, date: proposal.accepted_at };
 }
 
+interface OnboardingItem {
+  id: string;
+  slug: string;
+  status: string;
+}
+
 export default function ProposalList() {
   const [proposals, setProposals] = useState<ProposalWithEvents[]>([]);
+  const [onboardingData, setOnboardingData] = useState<Record<string, OnboardingItem>>({});
   const [loading, setLoading] = useState(true);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -27,13 +34,29 @@ export default function ProposalList() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
+
+    fetch("/api/onboarding")
+      .then((res) => res.json())
+      .then((data) => {
+        const map: Record<string, OnboardingItem> = {};
+        (Array.isArray(data) ? data : []).forEach((item: OnboardingItem) => {
+          map[item.slug] = item;
+        });
+        setOnboardingData(map);
+      })
+      .catch(() => {});
   }, []);
 
-  const handleCopyLink = (slug: string, id: string, mode: "proposal" | "agreement") => {
+  const handleCopyLink = (slug: string, id: string, mode: "proposal" | "agreement" | "onboarding") => {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
-    const path = mode === "agreement" ? `/agreement/${slug}` : `/proposal/${slug}`;
+    const path =
+      mode === "agreement"
+        ? `/agreement/${slug}`
+        : mode === "onboarding"
+          ? `/onboarding/${slug}`
+          : `/proposal/${slug}`;
     navigator.clipboard.writeText(`${siteUrl}${path}`);
-    setCopiedId(id);
+    setCopiedId(`${id}-${mode}`);
     setTimeout(() => setCopiedId(null), 2000);
   };
 
@@ -86,7 +109,7 @@ export default function ProposalList() {
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   <button onClick={() => handleCopyLink(proposal.slug, proposal.id, "proposal")} className="px-3 py-1.5 rounded-lg border border-dark-border text-xs text-dark-text-light hover:bg-white/5 transition-colors">
-                    {copiedId === proposal.id ? "Copied!" : "Copy Link"}
+                    {copiedId === `${proposal.id}-proposal` ? "Copied!" : "Copy Link"}
                   </button>
                   <Link href={`/admin/proposals/${proposal.id}`} className="px-3 py-1.5 rounded-lg border border-dark-border text-xs text-dark-text-light hover:bg-white/5 transition-colors">Edit</Link>
                   <button onClick={() => handleDelete(proposal.id)} className="px-3 py-1.5 rounded-lg border border-red-500/20 text-xs text-red-400 hover:bg-red-500/10 transition-colors">Delete</button>
@@ -119,7 +142,7 @@ export default function ProposalList() {
                     <h3 className="font-clash font-semibold text-lg truncate">{proposal.client_name}</h3>
                     <StatusBadge status={agreementStatus.status} />
                   </div>
-                  <div className="flex items-center gap-4 text-xs text-dark-text">
+                  <div className="flex items-center gap-4 text-xs text-dark-text flex-wrap">
                     <span>/agreement/{proposal.slug}</span>
                     <span>Created {new Date(proposal.created_at).toLocaleDateString()}</span>
                     {agreementStatus.date && (
@@ -127,13 +150,31 @@ export default function ProposalList() {
                         {agreementStatus.status === "agreement_accepted" ? "Agreement" : "Proposal"} accepted {new Date(agreementStatus.date).toLocaleDateString()}
                       </span>
                     )}
+                    {onboardingData[proposal.slug] ? (
+                      <span className="text-accent-blue">
+                        Onboarding {onboardingData[proposal.slug].status === "reviewed" ? "Reviewed" : "Completed"}
+                      </span>
+                    ) : (
+                      <span className="text-dark-text">Onboarding Pending</span>
+                    )}
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   <button onClick={() => handleCopyLink(proposal.slug, proposal.id, "agreement")} className="px-3 py-1.5 rounded-lg border border-dark-border text-xs text-dark-text-light hover:bg-white/5 transition-colors">
-                    {copiedId === proposal.id ? "Copied!" : "Copy Link"}
+                    {copiedId === `${proposal.id}-agreement` ? "Copied!" : "Copy Agreement Link"}
+                  </button>
+                  <button onClick={() => handleCopyLink(proposal.slug, proposal.id, "onboarding")} className="px-3 py-1.5 rounded-lg border border-accent-purple/50 text-xs text-accent-purple hover:bg-accent-purple/10 transition-colors">
+                    {copiedId === `${proposal.id}-onboarding` ? "Copied!" : "Copy Onboarding Link"}
                   </button>
                   <Link href={`/agreement/${proposal.slug}`} className="px-3 py-1.5 rounded-lg border border-accent-green/30 text-xs text-accent-green hover:bg-accent-green/10 transition-colors">View Agreement</Link>
+                  {onboardingData[proposal.slug] && (
+                    <Link
+                      href={`/admin/onboarding/${onboardingData[proposal.slug].id}`}
+                      className="px-3 py-1.5 rounded-lg border border-accent-blue/30 text-xs text-accent-blue hover:bg-accent-blue/10 transition-colors"
+                    >
+                      View Onboarding
+                    </Link>
+                  )}
                   <button onClick={() => handleDelete(proposal.id)} className="px-3 py-1.5 rounded-lg border border-red-500/20 text-xs text-red-400 hover:bg-red-500/10 transition-colors">Delete</button>
                 </div>
               </div>

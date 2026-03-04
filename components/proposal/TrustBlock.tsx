@@ -39,14 +39,14 @@ export default function TrustBlock() {
       className="px-6 pb-8"
     >
       <div className="max-w-3xl mx-auto text-center">
-        <p className="text-sm sm:text-base text-[#d4d4d8] mb-5 leading-relaxed">
+        <p className="text-sm sm:text-base text-dark-text-light mb-5 leading-relaxed">
           2FLY has managed campaigns for multiple local businesses across NYC — focused on real results, not vanity metrics.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
           {indicators.map((item, i) => (
             <div
               key={i}
-              className="flex items-center gap-2 text-sm text-[#d4d4d8]"
+              className="flex items-center gap-2 text-sm text-dark-text-light"
             >
               <span className="text-accent-green">{item.icon}</span>
               {item.text}

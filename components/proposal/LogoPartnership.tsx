@@ -35,7 +35,7 @@ export default function LogoPartnership({
             className="w-full h-full object-cover"
           />
         </div>
-        <span className="text-sm sm:text-base text-[#d4d4d8] font-medium whitespace-nowrap">
+        <span className="text-sm sm:text-base text-dark-text-light font-medium whitespace-nowrap">
           2FLY Agency
         </span>
       </motion.div>
@@ -232,7 +232,7 @@ export default function LogoPartnership({
             </span>
           )}
         </div>
-        <span className="text-sm sm:text-base text-[#d4d4d8] font-medium whitespace-nowrap max-w-[140px] truncate">
+        <span className="text-sm sm:text-base text-dark-text-light font-medium whitespace-nowrap max-w-[140px] truncate">
           {clientName}
         </span>
       </motion.div>

@@ -89,13 +89,13 @@ export default function PricingSection({
                 <h3 className="font-clash text-xl font-semibold mb-1">
                   {option1Name}
                 </h3>
-                <p className="text-sm sm:text-base text-[#d4d4d8]">{option1Desc}</p>
+                <p className="text-sm sm:text-base text-dark-text-light">{option1Desc}</p>
               </div>
               <div className="mb-2">
                 <span className="font-clash text-5xl font-bold text-accent-purple">
                   ${option1Price.toLocaleString()}
                 </span>
-                <span className="text-sm text-[#d4d4d8]">/month</span>
+                <span className="text-sm text-dark-text-light">/month</span>
               </div>
               <p className="text-sm text-accent-purple/80 mb-8">
                 Best value — lower monthly rate when you commit to 3 months.
@@ -104,7 +104,7 @@ export default function PricingSection({
                 {sharedFeatures.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-center gap-2.5 text-sm sm:text-base text-[#d4d4d8]"
+                    className="flex items-center gap-2.5 text-sm sm:text-base text-dark-text-light"
                   >
                     <svg
                       className="w-4 h-4 text-accent-purple shrink-0"
@@ -148,25 +148,25 @@ export default function PricingSection({
               <h3 className="font-clash text-xl font-semibold mb-1">
                 {option2Name}
               </h3>
-              <p className="text-sm sm:text-base text-[#d4d4d8]">{option2Desc}</p>
+              <p className="text-sm sm:text-base text-dark-text-light">{option2Desc}</p>
             </div>
             <div className="mb-2">
               <span className="font-clash text-5xl font-bold">
                 ${option2Price.toLocaleString()}
               </span>
-              <span className="text-sm text-[#d4d4d8]">/month</span>
+              <span className="text-sm text-dark-text-light">/month</span>
             </div>
-            <p className="text-sm text-[#d4d4d8]/90 mb-8">
+            <p className="text-sm text-dark-text-light/90 mb-8">
               Maximum flexibility — cancel any time with 30 days&apos; notice.
             </p>
             <ul className="space-y-3">
               {sharedFeatures.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-center gap-2.5 text-sm sm:text-base text-[#d4d4d8]"
+                  className="flex items-center gap-2.5 text-sm sm:text-base text-dark-text-light"
                 >
                   <svg
-                    className="w-4 h-4 text-[#d4d4d8] shrink-0"
+                    className="w-4 h-4 text-dark-text-light shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -191,7 +191,7 @@ export default function PricingSection({
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-sm sm:text-base text-[#d4d4d8] text-center mt-10"
+          className="text-sm sm:text-base text-dark-text-light text-center mt-10"
         >
           No hidden fees. Ad spend is billed separately by the platforms and fully transparent.
         </motion.p>

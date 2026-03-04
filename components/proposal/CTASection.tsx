@@ -27,7 +27,7 @@ export default function CTASection({
           <h2 className="font-clash text-3xl md:text-4xl font-bold mb-4">
             {isAccepted ? "Proposal Accepted!" : "Ready to Grow Together?"}
           </h2>
-          <p className="text-sm sm:text-base text-[#d4d4d8] mb-8 max-w-lg mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-dark-text-light mb-8 max-w-lg mx-auto leading-relaxed">
             {isAccepted
               ? "Thank you for choosing 2FLY Marketing. We're excited to start this partnership and drive results for your business."
               : "Let's turn your vision into reality. Accept this proposal to get started, or schedule a call to discuss further."}

@@ -63,14 +63,14 @@ export default function HeroSection({
 
         {/* Proposal status line */}
         <motion.div variants={slideUp} className="mb-8">
-          <p className="text-sm sm:text-base text-[#d4d4d8]">
+          <p className="text-sm sm:text-base text-dark-text-light">
             Status: {isAccepted ? (
               <span className="text-accent-green font-medium">Accepted</span>
             ) : (
               <span className="text-accent-green font-medium">Active</span>
             )}
             {!isAccepted && (
-              <span className="text-[#d4d4d8]"> · Valid for 30 days from receipt</span>
+              <span className="text-dark-text-light"> · Valid for 30 days from receipt</span>
             )}
           </p>
         </motion.div>
@@ -94,7 +94,7 @@ export default function HeroSection({
         {/* Subtitle */}
         <motion.p
           variants={slideUp}
-          className="text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed text-[#e4e4e7]"
+          className="text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed text-dark-text-light"
         >
           {heroSubtitle ||
             "A comprehensive digital marketing partnership designed to elevate your brand, drive growth, and deliver measurable results."}
@@ -104,7 +104,7 @@ export default function HeroSection({
         {customNote && (
           <motion.div
             variants={slideUp}
-            className="max-w-lg mx-auto mb-8 p-4 rounded-xl border border-dark-border bg-dark-card/50 text-sm sm:text-base text-[#d4d4d8] italic leading-relaxed"
+            className="max-w-lg mx-auto mb-8 p-4 rounded-xl border border-dark-border bg-dark-card/50 text-sm sm:text-base text-dark-text-light italic leading-relaxed"
           >
             &ldquo;{customNote}&rdquo;
           </motion.div>
@@ -125,13 +125,13 @@ export default function HeroSection({
           )}
           <button
             onClick={() => scrollToSection("services")}
-            className="px-6 py-3.5 rounded-xl border border-dark-border text-[#d4d4d8] font-medium text-sm sm:text-base hover:bg-white/5 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-dark-border"
+            className="px-6 py-3.5 rounded-xl border border-dark-border text-dark-text-light font-medium text-sm sm:text-base hover:bg-white/5 hover:text-[var(--color-text-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-dark-border"
           >
             Explore Services ↓
           </button>
           <button
             onClick={() => scrollToSection("pricing")}
-            className="px-6 py-3.5 rounded-xl border border-dark-border text-[#d4d4d8] font-medium text-sm sm:text-base hover:bg-white/5 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-dark-border"
+            className="px-6 py-3.5 rounded-xl border border-dark-border text-dark-text-light font-medium text-sm sm:text-base hover:bg-white/5 hover:text-[var(--color-text-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-dark-border"
           >
             View Pricing
           </button>

@@ -93,7 +93,7 @@ function FAQAccordionItem({
             transition={{ duration: 0.25, ease: [0.25, 0.4, 0.25, 1] }}
             className="overflow-hidden"
           >
-            <p className="text-sm sm:text-base text-[#d4d4d8] leading-relaxed pb-6 pr-8">
+            <p className="text-sm sm:text-base text-dark-text-light leading-relaxed pb-6 pr-8">
               {item.answer}
             </p>
           </motion.div>
@@ -145,7 +145,7 @@ export default function FAQ() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center mt-8 text-sm sm:text-base text-[#d4d4d8]"
+          className="text-center mt-8 text-sm sm:text-base text-dark-text-light"
         >
           Still have questions?{" "}
           <a

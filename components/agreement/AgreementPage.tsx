@@ -86,7 +86,7 @@ function AgreementNav() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <div className="w-2 h-2 rounded-full bg-accent-purple" />
-          <span className="text-sm sm:text-base text-[#d4d4d8]">
+          <span className="text-sm sm:text-base text-dark-text-light">
             Service Agreement
           </span>
         </div>
@@ -184,7 +184,7 @@ export default function AgreementPage({
   };
 
   return (
-    <div className="relative min-h-screen bg-dark-bg text-white">
+    <div className="relative min-h-screen bg-dark-bg text-dark-text-light">
       <AmbientBackground />
       <AgreementNav />
 
@@ -217,7 +217,7 @@ export default function AgreementPage({
             </motion.p>
             <motion.p
               variants={slideUp}
-              className="text-[#d4d4d8] text-lg max-w-2xl mx-auto leading-relaxed"
+              className="text-dark-text-light text-lg max-w-2xl mx-auto leading-relaxed"
             >
               This agreement is designed to be simple and clear. It describes how
               we&apos;ll work together to grow {displayName}&apos;s visibility and
@@ -230,10 +230,10 @@ export default function AgreementPage({
         <div className="max-w-3xl mx-auto px-6 pb-24 space-y-6">
           {/* 1. Who's involved */}
           <SectionCard label="Section 1">
-            <h2 className="font-clash text-xl font-semibold text-white mb-4">
+            <h2 className="font-clash text-xl font-semibold mb-4">
               Who&apos;s involved
             </h2>
-            <div className="grid sm:grid-cols-2 gap-6 text-[#d4d4d8]">
+            <div className="grid sm:grid-cols-2 gap-6 text-dark-text-light">
               <div className="p-4 rounded-xl bg-dark-bg/50 border border-dark-border">
                 <span className="text-accent-pink font-medium text-sm uppercase tracking-wider block mb-1">
                   Client
@@ -247,16 +247,16 @@ export default function AgreementPage({
                 <p>2FLY Marketing LLC (&quot;Agency&quot;)</p>
               </div>
             </div>
-            <div className="mt-4 space-y-2 text-[#d4d4d8]">
+            <div className="mt-4 space-y-2 text-dark-text-light">
               <p>
-                <span className="text-white font-medium">Start Date</span> — [to
+                <span className="font-medium">Start Date</span> — [to
                 be confirmed]
               </p>
               <p>
-                <span className="text-white font-medium">Initial Term</span> — 3
+                <span className="font-medium">Initial Term</span> — 3
                 months from the Start Date.
               </p>
-              <p className="text-[#d4d4d8] leading-relaxed pt-2">
+              <p className="text-dark-text-light leading-relaxed pt-2">
                 After the initial 3 months, the agreement can continue
                 month‑to‑month if both parties agree.
               </p>
@@ -265,10 +265,10 @@ export default function AgreementPage({
 
           {/* 2. What you're getting */}
           <SectionCard label="Section 2">
-            <h2 className="font-clash text-xl font-semibold text-white mb-4">
+            <h2 className="font-clash text-xl font-semibold mb-4">
               What You&apos;re Getting (Scope of Services)
             </h2>
-            <p className="text-[#d4d4d8] leading-relaxed mb-4">
+            <p className="text-dark-text-light leading-relaxed mb-4">
               We&apos;ll provide the 2Fly 360° Marketing Service customized for{" "}
               {displayName}, which includes:
             </p>
@@ -276,7 +276,7 @@ export default function AgreementPage({
               {SERVICE_ITEMS.map((item, i) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-[#d4d4d8]"
+                  className="flex items-start gap-3 text-dark-text-light"
                 >
                   <span className="text-accent-purple mt-1 shrink-0">●</span>
                   <span>{item}</span>
@@ -284,14 +284,14 @@ export default function AgreementPage({
               ))}
             </ul>
             <div className="p-4 rounded-xl border border-accent-green/20 bg-accent-green/5">
-              <p className="text-[#e4e4e7] leading-relaxed">
+              <p className="text-dark-text-light leading-relaxed">
                 <span className="text-accent-green font-medium">Goal:</span>{" "}
                 Drive more reservations, orders, and website actions for{" "}
                 {displayName}, while growing your local audience and brand
                 presence.
               </p>
             </div>
-            <p className="text-[#d4d4d8] leading-relaxed mt-4 text-sm">
+            <p className="text-dark-text-light leading-relaxed mt-4 text-sm">
               The exact tactics may evolve over time based on performance and
               data, but the focus remains on the goals above.
             </p>
@@ -299,7 +299,7 @@ export default function AgreementPage({
 
           {/* 3. Fees & payment */}
           <SectionCard label="Section 3">
-            <h2 className="font-clash text-xl font-semibold text-white mb-4">
+            <h2 className="font-clash text-xl font-semibold mb-4">
               Fees & Payment
             </h2>
             <div className="space-y-4 mb-4">
@@ -307,13 +307,13 @@ export default function AgreementPage({
                 <p className="text-accent-purple text-xs font-medium uppercase tracking-wider mb-1">
                   Monthly Marketing Package
                 </p>
-                <p className="font-clash text-2xl font-bold text-white">
-                  {formattedFee} USD <span className="text-[#d4d4d8] font-normal text-lg">/ month</span>
+                <p className="font-clash text-2xl font-bold">
+                  {formattedFee} USD <span className="text-dark-text-light font-normal text-lg">/ month</span>
                 </p>
-                <p className="text-[#d4d4d8] text-sm mt-2">
+                <p className="text-dark-text-light text-sm mt-2">
                   Includes maintenance, upgrades, and all marketing services.
                 </p>
-                <div className="mt-4 pt-4 border-t border-accent-purple/20 space-y-2 text-[#d4d4d8] text-sm">
+                <div className="mt-4 pt-4 border-t border-accent-purple/20 space-y-2 text-dark-text-light text-sm">
                   <p>Advertising spend is not included and is paid directly to platforms (Google, Meta, etc.) using your payment methods.</p>
                   <p>Month 1 is invoiced upon signing and must be paid before work starts.</p>
                   <p>Months 2 and 3 are invoiced in advance on the same date each month.</p>
@@ -324,10 +324,10 @@ export default function AgreementPage({
                 <p className="text-accent-pink text-xs font-medium uppercase tracking-wider mb-1">
                   Website Creation
                 </p>
-                <p className="font-clash text-2xl font-bold text-white">
-                  1,300 USD <span className="text-[#d4d4d8] font-normal text-lg">one-time</span>
+                <p className="font-clash text-2xl font-bold">
+                  1,300 USD <span className="text-dark-text-light font-normal text-lg">one-time</span>
                 </p>
-                <p className="text-[#d4d4d8] text-sm mt-2">
+                <p className="text-dark-text-light text-sm mt-2">
                   Full responsive website design, SEO setup, and all foundational elements to get your site live and performing. This is a one-time payment only — maintenance and upgrades are included in the Monthly Marketing Package above.
                 </p>
               </div>
@@ -336,7 +336,7 @@ export default function AgreementPage({
 
           {/* 4. How we'll work together */}
           <SectionCard label="Section 4">
-            <h2 className="font-clash text-xl font-semibold text-white mb-6">
+            <h2 className="font-clash text-xl font-semibold mb-6">
               How We&apos;ll Work Together
             </h2>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -346,7 +346,7 @@ export default function AgreementPage({
                 </h3>
                 <ul className="space-y-2">
                   {CLIENT_RESPONSIBILITIES.map((item) => (
-                    <li key={item} className="flex gap-2 text-[#d4d4d8] text-sm">
+                    <li key={item} className="flex gap-2 text-dark-text-light text-sm">
                       <span className="text-accent-pink shrink-0">→</span>
                       <span>{item}</span>
                     </li>
@@ -359,7 +359,7 @@ export default function AgreementPage({
                 </h3>
                 <ul className="space-y-2">
                   {AGENCY_RESPONSIBILITIES.map((item) => (
-                    <li key={item} className="flex gap-2 text-[#d4d4d8] text-sm">
+                    <li key={item} className="flex gap-2 text-dark-text-light text-sm">
                       <span className="text-accent-purple shrink-0">→</span>
                       <span>{item}</span>
                     </li>
@@ -371,10 +371,10 @@ export default function AgreementPage({
 
           {/* 5. Term, renewal & cancellation */}
           <SectionCard label="Section 5">
-            <h2 className="font-clash text-xl font-semibold text-white mb-4">
+            <h2 className="font-clash text-xl font-semibold mb-4">
               Term, Renewal & Cancellation
             </h2>
-            <div className="space-y-3 text-[#d4d4d8] leading-relaxed">
+            <div className="space-y-3 text-dark-text-light leading-relaxed">
               <p>The initial term is three (3) months from the Start Date.</p>
               <p>
                 During the initial term, early cancellation requires mutual
@@ -393,10 +393,10 @@ export default function AgreementPage({
 
           {/* 6. Communication */}
           <SectionCard label="Section 6">
-            <h2 className="font-clash text-xl font-semibold text-white mb-4">
+            <h2 className="font-clash text-xl font-semibold mb-4">
               Communication
             </h2>
-            <div className="space-y-3 text-[#d4d4d8] leading-relaxed">
+            <div className="space-y-3 text-dark-text-light leading-relaxed">
               <p>We&apos;ll keep communication simple and responsive.</p>
               <p>
                 Our main hub for collaboration will be the 2FlyFlow platform,
@@ -422,10 +422,10 @@ export default function AgreementPage({
 
           {/* 7. The legal bits */}
           <SectionCard label="Section 7">
-            <h2 className="font-clash text-xl font-semibold text-white mb-4">
+            <h2 className="font-clash text-xl font-semibold mb-4">
               The Legal Bits (Kept Short)
             </h2>
-            <div className="space-y-3 text-[#d4d4d8] leading-relaxed text-sm">
+            <div className="space-y-3 text-dark-text-light leading-relaxed text-sm">
               <p>
                 This agreement covers marketing services only. While we
                 can&apos;t guarantee specific results, we commit to using our
@@ -445,10 +445,10 @@ export default function AgreementPage({
 
           {/* 8. Acceptance */}
           <SectionCard label="Section 8">
-            <h2 className="font-clash text-xl font-semibold text-white mb-4">
+            <h2 className="font-clash text-xl font-semibold mb-4">
               Acceptance
             </h2>
-            <p className="text-[#d4d4d8] leading-relaxed mb-6">
+            <p className="text-dark-text-light leading-relaxed mb-6">
               By signing or otherwise accepting this Agreement, you confirm
               that you are authorized to enter into this Agreement on behalf of{" "}
               {displayName} and that you agree to the terms above.
@@ -478,10 +478,10 @@ export default function AgreementPage({
                       />
                     </svg>
                   </div>
-                  <h3 className="font-clash text-xl font-bold text-white mb-2">
+                  <h3 className="font-clash text-xl font-bold mb-2">
                     Agreement Accepted!
                   </h3>
-                  <p className="text-[#d4d4d8] text-sm">
+                  <p className="text-dark-text-light text-sm">
                     Thank you for partnering with 2FLY. We&apos;ll be in touch
                     within 48 hours to get started.
                   </p>
@@ -500,7 +500,7 @@ export default function AgreementPage({
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-[#d4d4d8] mb-1.5">
+                      <label className="block text-xs font-medium text-dark-text-light mb-1.5">
                         Client Name
                       </label>
                       <input
@@ -511,11 +511,11 @@ export default function AgreementPage({
                           setFormData((p) => ({ ...p, clientName: e.target.value }))
                         }
                         placeholder="Full legal name"
-                        className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-white placeholder:text-dark-text focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
+                        className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-dark-text-light placeholder:text-dark-text focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-[#d4d4d8] mb-1.5">
+                      <label className="block text-xs font-medium text-dark-text-light mb-1.5">
                         Title / Role
                       </label>
                       <input
@@ -526,12 +526,12 @@ export default function AgreementPage({
                           setFormData((p) => ({ ...p, title: e.target.value }))
                         }
                         placeholder="e.g. Owner, Marketing Manager"
-                        className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-white placeholder:text-dark-text focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
+                        className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-dark-text-light placeholder:text-dark-text focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-[#d4d4d8] mb-1.5">
+                    <label className="block text-xs font-medium text-dark-text-light mb-1.5">
                       Email
                     </label>
                     <input
@@ -542,12 +542,12 @@ export default function AgreementPage({
                         setFormData((p) => ({ ...p, email: e.target.value }))
                       }
                       placeholder="you@company.com"
-                      className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-white placeholder:text-dark-text focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
+                      className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-dark-text-light placeholder:text-dark-text focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
                     />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-[#d4d4d8] mb-1.5">
+                      <label className="block text-xs font-medium text-dark-text-light mb-1.5">
                         Signature (type full name)
                       </label>
                       <input
@@ -558,11 +558,11 @@ export default function AgreementPage({
                           setFormData((p) => ({ ...p, signature: e.target.value }))
                         }
                         placeholder="Your full name"
-                        className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-white placeholder:text-dark-text focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
+                        className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-dark-text-light placeholder:text-dark-text focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-[#d4d4d8] mb-1.5">
+                      <label className="block text-xs font-medium text-dark-text-light mb-1.5">
                         Date
                       </label>
                       <input
@@ -572,7 +572,7 @@ export default function AgreementPage({
                         onChange={(e) =>
                           setFormData((p) => ({ ...p, date: e.target.value }))
                         }
-                        className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-white focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
+                        className="w-full px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-dark-text-light focus:outline-none focus:ring-2 focus:ring-accent-green/50 focus:border-accent-green/50"
                       />
                     </div>
                   </div>

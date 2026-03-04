@@ -65,7 +65,7 @@ export default function ProgressMetrics() {
                   {metric.label}
                 </h3>
               </div>
-              <p className="text-sm sm:text-base text-[#d4d4d8] leading-relaxed pl-[22px]">
+              <p className="text-sm sm:text-base text-dark-text-light leading-relaxed pl-[22px]">
                 {metric.description}
               </p>
             </motion.div>
@@ -80,7 +80,7 @@ export default function ProgressMetrics() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center"
         >
-          <p className="text-sm sm:text-base text-[#d4d4d8] max-w-2xl mx-auto leading-relaxed border-t border-dark-border pt-10">
+          <p className="text-sm sm:text-base text-dark-text-light max-w-2xl mx-auto leading-relaxed border-t border-dark-border pt-10">
             We don&apos;t promise specific numbers — markets vary.
             What we guarantee is a structured, data-driven approach where every
             dollar is tracked, every campaign is optimized, and nothing runs on
