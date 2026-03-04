@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import type { User } from "@supabase/supabase-js";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function AdminLayout({
   children,
@@ -62,7 +63,10 @@ export default function AdminLayout({
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-dark-bg flex items-center justify-center px-4">
+      <div className="min-h-screen bg-dark-bg flex flex-col items-center justify-center px-4">
+        <div className="absolute top-6 right-6">
+          <ThemeToggle />
+        </div>
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
             <h1 className="font-clash text-3xl font-bold">
@@ -126,6 +130,7 @@ export default function AdminLayout({
             <span className="text-dark-text text-sm">Admin</span>
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <span className="text-dark-text text-sm">{user.email}</span>
             <button
               onClick={handleLogout}

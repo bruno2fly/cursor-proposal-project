@@ -1,8 +1,12 @@
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-dark-bg flex items-center justify-center px-4">
+    <div className="min-h-screen bg-dark-bg flex flex-col items-center justify-center px-4">
+      <div className="absolute top-6 right-6">
+        <ThemeToggle />
+      </div>
       <div className="text-center">
         <h1 className="font-clash text-6xl font-bold mb-4 gradient-text">
           404

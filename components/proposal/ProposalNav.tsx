@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface ProposalNavProps {
   status: string;
@@ -29,7 +30,8 @@ export default function ProposalNav({ status }: ProposalNavProps) {
         <div className="font-clash text-xl font-bold tracking-tight">
           2<span className="gradient-text">FLY</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
           <div
             className={`w-2 h-2 rounded-full ${
               isAccepted ? "bg-accent-green" : "bg-accent-green animate-pulse"

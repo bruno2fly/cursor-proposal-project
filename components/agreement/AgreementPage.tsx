@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AmbientBackground from "@/components/proposal/AmbientBackground";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface AgreementPageProps {
   proposalId: string | null;
@@ -82,7 +83,8 @@ function AgreementNav() {
         <a href="/" className="font-clash text-xl font-bold tracking-tight">
           2<span className="gradient-text">FLY</span>
         </a>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
           <div className="w-2 h-2 rounded-full bg-accent-purple" />
           <span className="text-sm sm:text-base text-[#d4d4d8]">
             Service Agreement
